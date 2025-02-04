@@ -53,6 +53,7 @@ class TestController extends AbstractController
     ];
 
     #[Route('/users', name: 'coll_users', methods: ['GET'])]
+    #[IsGranted("ROLE_ADMIN")]
     public function getColl(): JsonResponse
     {
         return new JsonResponse([
